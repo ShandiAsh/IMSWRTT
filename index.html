@@ -27,16 +27,17 @@
   margin-top: 10px;
   font-size: 20px;
 }
-
   </style>
+  
 <body>
   <h1>Catch the Ball</h1>
   <canvas id="gameCanvas" width="500" height="600"></canvas>
   <div id="score">Score: 0</div>
+  
   <script>
     const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-
+    
 let paddle = {
   x: canvas.width / 2 - 50,
   y: canvas.height - 30,
@@ -52,9 +53,9 @@ let ball = {
   radius: 15,
   speed: 3
 };
-
+    
 let score = 0;
-
+    
 function drawPaddle() {
   ctx.fillStyle = '#0f0';
   ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
@@ -70,7 +71,7 @@ function drawBall() {
 
 function movePaddle() {
   paddle.x += paddle.dx;
-
+  
   // Keep paddle in bounds
   if (paddle.x < 0) paddle.x = 0;
   if (paddle.x + paddle.width > canvas.width) paddle.x = canvas.width - paddle.width;
@@ -130,5 +131,6 @@ update();
   </script>
 </body>
 </html>
+
 
 
